@@ -1,0 +1,46 @@
+body{
+    background: #333;
+    color: aliceblue;
+}
+
+.login{
+    border: aliceblue 2px solid;
+    max-width: 600px;
+    text-align: center;
+    margin: 140px auto;
+}
+
+#login-form{
+    background: aliceblue;
+    padding: 20px;
+
+}
+
+.input-container{
+    color: #333;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    text-align: left;
+    justify-content: space-around;
+}
+
+.input-container label{
+    width: 100px;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.input-container input{
+    font-size: 20px;
+}
+
+#submit-btn {
+    background: #333;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: aliceblue;
+    width: 60%;
+    margin: 40px auto;
+
+}

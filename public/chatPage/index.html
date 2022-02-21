@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+    <style>
+      body {
+        background: #333;
+        color: aliceblue;
+        box-sizing: border-box;
+      }
+
+      h1 {
+        text-align: center;
+      }
+      .messages-window {
+        background-color: #f0f8ff;
+        color: #333;
+        border: #333 2px solid;
+        border-radius: 10px;
+        margin: 0 2vw;
+      }
+
+      .messages__container {
+        list-style: none;
+        padding-left: 0;
+        padding: 20px 30px;
+      }
+
+      .messages__container li {
+        padding: 5px 10px;
+        margin: 5px 10px;
+        text-align: left;
+        color: rgb(19, 88, 2);
+      }
+
+      .messages__container .sent-by-user {
+        color: rgb(2, 72, 112);
+        text-align: right;
+      }
+
+      .send-message {
+        position: fixed;
+        bottom: 0;
+        width: 98vw;
+        margin: 0;
+        margin-bottom: 10px;
+      }
+
+      #send-message__input {
+        width: 80%;
+        font-size: 18px;
+        padding: 5px 10px;
+      }
+
+      #send-message__form input[type="submit"] {
+        width: 16%;
+        color: aliceblue;
+        background: #333;
+        border: #f0f8ff solid 1px;
+        font-size: 18px;
+        padding: 5px 10px;
+        margin: 0;
+      }
+
+      .messages__container .user-connect-or-disconnect {
+        text-align: center;
+        color: red;
+      }
+    </style>
+    <title>Chat APP</title>
+  </head>
+  <body>
+    <h1>Welcome to the Chat App</h1>
+    <div class="messages-window">
+      <ul class="messages__container" id="message__list"></ul>
+    </div>
+    <div class="send-message">
+      <form action="" id="send-message__form">
+        <input
+          type="text"
+          id="send-message__input"
+          placeholder="Enter the message"
+        />
+        <input type="submit" value="Send Message" />
+      </form>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- <script src="main.js"></script> -->
+    <script>
+      let socket = io();
+      let messageForm = document.getElementById("send-message__form");
+      let messageInput = document.getElementById("send-message__input");
+      let messageList = document.getElementById("message__list");
+
+      // const userName = "test"; // Need to get it from login form or jwt somehow
+
+      // socket.emit("user name", userName);
+
+      const addMessage = (
+        message,
+        sentByUser = false,
+        newConnectOrDisconnect = false
+      ) => {
+        let item = document.createElement("li");
+        item.textContent = message;
+        if (sentByUser) {
+          item.classList.add("sent-by-user");
+        } else if (newConnectOrDisconnect) {
+          item.classList.add("user-connect-or-disconnect");
+        }
+        messageList.appendChild(item);
+        window.scrollTo(0, document.body.scrollHeight);
+      };
+
+      messageForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        try {
+          let message = messageInput.value;
+          socket.emit("chat message", message);
+          messageInput.value = "";
+          // Need to add message to the message list with class sent by user
+          addMessage("You: " + message, true);
+        } catch (err) {
+          console.log(err);
+        }
+      });
+
+      socket.on("new user", (userName) => {
+        addMessage(`${userName} has entered the chat`, false, true);
+      });
+
+      socket.on("user left", (userName) => {
+        addMessage(`${userName} has left the chat`, false, true);
+      });
+
+      socket.on("chat message", (msg) => {
+        addMessage(msg);
+      });
+    </script>
+  </body>
+</html>

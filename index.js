@@ -12,9 +12,8 @@ app.use(express.urlencoded({extended:false}))
 app.use('/api/users', require('./routes/api/users'))
 
 
-
 // Static Folder
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public', 'userPage')))
 
 const PORT = process.env.PORT || 5000
 

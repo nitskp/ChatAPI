@@ -1,0 +1,63 @@
+body {
+    background: #333;
+    color: aliceblue;
+    box-sizing: border-box;
+  }
+
+  h1 {
+    text-align: center;
+  }
+  .messages-window {
+    background-color: #f0f8ff;
+    color: #333;
+    border: #333 2px solid;
+    border-radius: 10px;
+    margin: 0 2vw;
+  }
+
+  .messages__container {
+    list-style: none;
+    padding-left: 0;
+    padding: 20px 30px;
+  }
+
+  .messages__container li {
+    padding: 5px 10px;
+    margin: 5px 10px;
+    text-align: left;
+    color: rgb(19, 88, 2);
+  }
+
+  .messages__container .sent-by-user {
+    color: rgb(2, 72, 112);
+    text-align: right;
+  }
+
+  .send-message {
+    position: absolute;
+    bottom: 0;
+    width: 98vw;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  #send-message__input {
+    width: 80%;
+    font-size: 18px;
+    padding: 5px 10px;
+  }
+
+  #send-message__form input[type="submit"] {
+    width: 16%;
+    color: aliceblue;
+    background: #333;
+    border: #f0f8ff solid 1px;
+    font-size: 18px;
+    padding: 5px 10px;
+    margin: 0;
+  }
+
+  .messages__container .user-connect-or-disconnect{
+    text-align: center;
+    color: red;
+  }

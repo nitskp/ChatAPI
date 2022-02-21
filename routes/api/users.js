@@ -58,12 +58,11 @@ router.post("/", async (req, res) => {
       phone: req.body.phone,
       messages: req.body.messages,
     };
-    const addUser = async (userData) => {
+    
       const USER = new User(userData);
       await USER.save();
       return res.send(USER);
-    };
-    addUser(userData);
+  
   } else {
     return res.status(400).json({
       message: "No data send",
