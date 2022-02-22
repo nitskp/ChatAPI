@@ -167,25 +167,33 @@ socket.broadcast.emit("new user", userID);
 ### WebSockets, Socket.io and app
 
 [Socket.io Docs](https://socket.io/docs/v4/)
+
 [Real Time Chat App tutorial](https://socket.io/get-started/chat)
+
 [Websockets: What it is and why to use it?](https://medium.com/@jamesbrown5292/what-i-learned-about-websockets-by-building-a-real-time-chat-application-using-socket-io-3d9e163e504)
+
 [Websockets implementation docs](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
+
 [Using JWT in Websockets](https://stackoverflow.com/questions/64934740/websocket-connection-with-authorization-header)
 
 ### MongoDB and Mongoose
 
 [MongoDB Crash Course](https://www.youtube.com/watch?v=ofme2o29ngU)
+
 [MongoDB Commands Cheatsheet (from web dev simplified youtube channel)](https://drive.google.com/file/d/1ze77PXddzRRzPqNrx7Utn6ORcwInqGtP/view?usp=sharing)
+
 [Mongoose Crash Course](https://www.youtube.com/watch?v=DZBGEVgL2eE)
 
 ### JWT
 
 [About JWT](https://www.youtube.com/watch?v=7Q17ubqLfaM&ab_channel=WebDevSimplified)
+
 [How to use JWT with node](https://www.youtube.com/watch?v=mbsmsi7l3r4&ab_channel=WebDevSimplified)
 
 ### Node and Express
 
 [Node.js beginner tutorial](https://www.youtube.com/watch?v=TlB_eWDSMt4&ab_channel=ProgrammingwithMosh)
+
 [Express Crash Course](https://youtu.be/L72fhGm1tfE)
 
 ## About App
@@ -203,6 +211,7 @@ socket.broadcast.emit("new user", userID);
 #### Chat App Page
 
 ![Chat app page example1](https://imgur.com/iDGNDbi)
+
 ![Chat app page example2](https://imgur.com/gHX6BhO)
 
 ### Basic Architecture or back-end of the app
@@ -236,5 +245,7 @@ const userSchema = new mongoose.Schema({
 });
 
 ```
+
 #### User in the database
+
 ![User Database example](https://imgur.com/BgVD8JX)
