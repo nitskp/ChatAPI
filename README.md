@@ -202,17 +202,17 @@ socket.broadcast.emit("new user", userID);
 
 #### Sign up Form
 
-![Sign Up form](https://imgur.com/koJYNmM)
+[Sign Up form img](https://imgur.com/koJYNmM)
 
 #### Log in Form
 
-![Log in Form](https://imgur.com/VuLkl8U)
+[Log in Form img](https://imgur.com/VuLkl8U)
 
 #### Chat App Page
 
-![Chat app page example1](https://imgur.com/iDGNDbi)
+[Chat app page example1 img](https://imgur.com/iDGNDbi)
 
-![Chat app page example2](https://imgur.com/gHX6BhO)
+[Chat app page example2 img](https://imgur.com/gHX6BhO)
 
 ### Basic Architecture or back-end of the app
 
@@ -248,4 +248,4 @@ const userSchema = new mongoose.Schema({
 
 #### User in the database
 
-![User Database example](https://imgur.com/BgVD8JX)
+[User Database example img](https://imgur.com/BgVD8JX)
