@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 7000;
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 const User = require('./routes/api/models/User')
-const MESSAGES = []
+
 
 mongoose.connect(
   "mongodb://localhost/UsersData",
